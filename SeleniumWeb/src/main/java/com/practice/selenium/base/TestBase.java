@@ -1,5 +1,6 @@
 package com.practice.selenium.base;
 
+import org.openqa.selenium.WebDriver;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 import org.springframework.test.context.ContextConfiguration;
@@ -14,8 +15,11 @@ public class TestBase extends AbstractTestNGSpringContextTests {
     private String url;
 
     @PostConstruct
-    public void setUrl(){
-        System.out.println("Url is : " + url);
+    public void setUp(){
+        System.out.println("Base Url : " + url);
     }
 
+    public String getUrl(){
+        return url;
+    }
 }
